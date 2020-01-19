@@ -15,14 +15,14 @@ def enumerating_gene_orders(num_array, start, end):
     # recursive call of Heap's algorithm
     if start == end:
         # use map in conjunction with join to merge the lists of number permutations into strings
-        print(", ".join(map(str, num_array)))
+        print(" ".join(map(str, num_array)))
     else:
         for i in range(start, len(num_array)):
             num_array[start], num_array[i] = num_array[i], num_array[start]
             enumerating_gene_orders(num_array, start + 1, end)
             num_array[start], num_array[i] = num_array[i], num_array[start]
 
-number = 3
+number = 6
 num_array = create_num_array(number)
 print(factorial_recursion(number))
 enumerating_gene_orders(num_array, 0, len(num_array) - 1)
